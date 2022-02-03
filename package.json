@@ -1,0 +1,51 @@
+{
+  "name": "restaurant-manager-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Lervana/restaurant-manager-js.git",
+  "author": "Katarzyna Dadek <k.dadek@lervana.dev>",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development NODE_OPTIONS=--experimental-vm-modules nodemon src/index.js",
+    "test-api": "cross-env NODE_ENV=test nodemon src/index.js",
+    "test": "cross-env NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --detectOpenHandles --maxWorkers=1 --watch",
+    "prepare": "husky install",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "helmet": "^4.6.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "sequelize-cli": "^6.2.0"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "jest": {
+    "transform": {}
+  }
+}
